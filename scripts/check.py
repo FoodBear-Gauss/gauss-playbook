@@ -5,7 +5,8 @@ Checks:
   1. Required files exist.
   2. Every relative Markdown link resolves, including #anchors to headings.
   3. Every template in templates/ is listed in templates/README.md.
-  4. No secrets, local machine paths or commercial figures are committed.
+  4. No secrets, local machine paths or commercial figures are committed
+     (Markdown, Python, JSON and YAML files, except this script).
 
 Exit 0 when all pass, 1 otherwise.
 """
@@ -20,7 +21,10 @@ ROOT = Path(__file__).resolve().parent.parent
 REQUIRED = [
     "README.md", "AGENTS.md", "CLAUDE.md", "TESTING.md", "CHANGELOG.md", "DEVLOG.md",
     "principles.md", "lifecycle.md", "risk-and-approval.md", "delivery.md", "glossary.md",
-    "adopt/README.md", "adopt/AGENTS-block.md", "templates/README.md",
+    "adopt/README.md", "adopt/AGENTS-block.md", "templates/README.md", "templates/progress.md",
+    "adopt/claude/README.md", "adopt/claude/settings.json",
+    "adopt/claude/live-write-patterns.example.json", "adopt/claude/hooks/live_write_guard.py",
+    "tests/test_live_write_guard.py",
 ]
 
 FORBIDDEN = [
@@ -58,6 +62,14 @@ def markdown_files() -> list[Path]:
     return sorted(p for p in ROOT.rglob("*.md") if ".git" not in p.parts)
 
 
+def scanned_files() -> list[Path]:
+    """Files checked for forbidden content: Markdown, Python, JSON and YAML."""
+    out = []
+    for ext in ("*.md", "*.py", "*.json", "*.yml", "*.yaml"):
+        out += [p for p in ROOT.rglob(ext) if ".git" not in p.parts]
+    return sorted(p for p in out if p.resolve() != Path(__file__).resolve())
+
+
 def main() -> int:
     errors: list[str] = []
 
@@ -84,12 +96,13 @@ def main() -> int:
                     errors.append(f"{rel_md}:{n}: broken link {target}")
                 elif anchor and dest.suffix == ".md" and anchor not in anchors(dest):
                     errors.append(f"{rel_md}:{n}: missing anchor {target}")
-        for pattern, label in FORBIDDEN:
-            if md.name == "check.py":
-                continue
-            for n, line in enumerate(text.splitlines(), 1):
+
+    for path in scanned_files():
+        rel = path.relative_to(ROOT)
+        for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+            for pattern, label in FORBIDDEN:
                 if pattern.search(line):
-                    errors.append(f"{rel_md}:{n}: forbidden content ({label})")
+                    errors.append(f"{rel}:{n}: forbidden content ({label})")
 
     index = (ROOT / "templates/README.md").read_text(encoding="utf-8")
     for tpl in sorted((ROOT / "templates").glob("*.md")):
