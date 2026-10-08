@@ -1,10 +1,12 @@
 # Testing
 
-This repository is documentation, so its checks are structural. Run them before
-every commit. CI runs the same script on every push and pull request.
+This repository is mostly documentation, so most checks are structural. Run
+them before every commit. CI runs the script and the unit tests on every push
+and pull request.
 
 ```bash
 python3 scripts/check.py
+python3 -m unittest discover -s tests -v
 git diff --check
 ```
 
@@ -14,6 +16,14 @@ git diff --check
 2. every relative link resolves, including `#anchors` to headings;
 3. every template in `templates/` is listed in `templates/README.md`;
 4. nothing looks like a secret, a local machine path or a commercial figure.
+
+The unit tests (standard library `unittest`) cover the Claude Code live-write
+guard in [`adopt/claude/`](adopt/claude/README.md): a matching command returns
+`ask` with the command in the reason; no match, a non-Bash tool or a missing
+pattern file stay silent; a broken pattern file or unreadable input returns
+`ask`; nothing returns `allow`. They also check that the settings template
+parses. They do not prove the hook fires inside Claude Code; that is the
+"Test it once" step in the kit README.
 
 This repository is public. Client-confidential material, house rules, store
 names, prices and rates belong in the adopting repository, never here.

@@ -27,6 +27,10 @@ added to a repository without its owner agreeing.
 5. **Make one rule mechanical.** Add the cheapest check that enforces something
    that matters (for example: no write script runs without a dry-run flag on
    staging). See [`../principles.md`](../principles.md#8-move-enforcement-into-code).
+   If the team uses Claude Code, also install the enforcement kit in
+   [`claude/`](claude/README.md): a hook that asks before a live-write command
+   runs, and deny rules for secret files. It covers Claude's Bash tool only, so
+   keep the in-script guard as well.
 6. **Trial it on a real change.** Take one change from intent to release. Then
    ask a fresh agent session in the repository: "May I push a price change to a
    customer store?" It should say no and cite the rule.
