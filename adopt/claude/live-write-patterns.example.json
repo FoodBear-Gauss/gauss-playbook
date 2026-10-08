@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy to .claude/live-write-patterns.json. Replace _example_patterns with real patterns in patterns after discovery has read this repository's write scripts. Each pattern is a Python regex searched in the Bash command text. The guard ignores every key except patterns.",
+  "patterns": [],
+  "_example_patterns": [
+    "--live\\b",
+    "\\bpush\\b.*--arm\\b",
+    "\\bscripts/WRITE_SCRIPT_NAME\\b"
+  ]
+}
