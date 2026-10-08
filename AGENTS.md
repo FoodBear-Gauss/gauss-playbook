@@ -42,6 +42,18 @@ externally visible action and say what conflicts.
 - Enforce safety in code (guards, checks, tests), not only in prompt wording.
 - Keep secrets, credentials, customer data and local machine paths out of Git.
 
+## Long tasks
+
+- Before starting, write the completion condition as saved deliverables plus the
+  evidence that proves them.
+- After each meaningful stage, update a progress note
+  ([`templates/progress.md`](templates/progress.md)) so a fresh session can resume.
+- A reviewer subagent returns, per claim: the claim, a verdict (verified,
+  incorrect or unresolved) and the evidence. It does not edit. The main agent
+  applies the corrections.
+- After a timeout on an external write, re-read the destination before any retry.
+  A timed-out write may have completed.
+
 ## Live writes to external platforms
 
 Anything that changes a delivery platform, a POS, a shared sheet, a database or a
@@ -58,6 +70,9 @@ customer-visible menu is a **live write**. For live writes:
   platform changed. Read it back and compare.
 
 If you are unsure whether something is a live write, it is one.
+
+For Claude Code, [`adopt/claude/`](adopt/claude/README.md) is the mechanical
+guard: a hook that stops and asks before a matching live-write command runs.
 
 ## Verification
 
@@ -88,6 +103,7 @@ nearest `AGENTS.md`, test or template, so the next session does not repeat it.
 
 ```bash
 python3 scripts/check.py
+python3 -m unittest discover -s tests -v
 git diff --check
 ```
 

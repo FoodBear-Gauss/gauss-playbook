@@ -12,6 +12,7 @@ not need rather than writing "n/a".
 | [`threat-model.md`](threat-model.md) | What the system can touch, and what could go wrong | Design |
 | [`adr.md`](adr.md) | One architectural decision, with the options considered | Design |
 | [`plan.md`](plan.md) | Files that change, order, risks, proof; written before the code | Build |
+| [`progress.md`](progress.md) | Resume note for a long or multi-session task: done with evidence, decisions, next action | Build |
 | [`review.md`](review.md) | The three review passes, findings and severities | Verify |
 | [`coverage-sheet.md`](coverage-sheet.md) | Every check for one action on one platform, with evidence | Verify |
 | [`runbook.md`](runbook.md) | Release, rollback, restore and stop-all steps | Release |
@@ -19,5 +20,5 @@ not need rather than writing "n/a".
 | [`incident-record.md`](incident-record.md) | What happened when something went wrong, and what changed | Operate, Learn |
 
 `intent`, `prd`, `spec`, `plan`, `adr`, `review`, `runbook` and `incident-record`
-are adapted from the AI Engineering Playbook. `threat-model`, `coverage-sheet`
-and `weekly-report` are written for Gauss.
+are adapted from the AI Engineering Playbook. `threat-model`, `coverage-sheet`,
+`weekly-report` and `progress` are written for Gauss.

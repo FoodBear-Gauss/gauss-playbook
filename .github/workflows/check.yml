@@ -19,3 +19,5 @@ jobs:
           python-version: "3.12"
       - name: Structural checks
         run: python3 scripts/check.py
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -v
