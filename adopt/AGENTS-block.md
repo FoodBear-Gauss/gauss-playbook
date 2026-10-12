@@ -16,6 +16,7 @@ more specific.
 - **Test stores:** <names or link; live tests happen only here>
 - **Project documents:** `docs/`
 - **Review and merge:** <who reviews, who merges>
+- **Definition of Done:** the playbook's `definition-of-done.md`, plus <link to local additions, usually an ADR>
 - **Release and rollback:** <link to runbook>
 - **Stop all runs:** <command or procedure>
 

@@ -16,6 +16,7 @@ ship: small changes, finished and proven.
 | New to the team | [`principles.md`](principles.md), then [`lifecycle.md`](lifecycle.md) |
 | About to touch anything that writes to a live platform | [`risk-and-approval.md`](risk-and-approval.md) |
 | Opening or reviewing a pull request | [`delivery.md`](delivery.md) |
+| Deciding whether an issue is done | [`definition-of-done.md`](definition-of-done.md) |
 | Starting a document | [`templates/`](templates/README.md) |
 | Bringing a repository onto the playbook | [`adopt/`](adopt/README.md) |
 | Unsure what a word means | [`glossary.md`](glossary.md) |
