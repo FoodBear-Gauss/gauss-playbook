@@ -71,7 +71,10 @@ path, and retirement.>
 |---|---|---|---|---|
 | | Risk/assumption/decision | | | |
 
-## Definition of done
+## Done when (project level)
+
+<Observable end-to-end evidence that this project is finished. Each issue also
+meets the shared [Definition of Done](../definition-of-done.md).>
 
 - <observable end-to-end evidence>
 

@@ -36,7 +36,7 @@ An issue is done when all of these are true:
    closing keyword. GitHub closes the issue on merge.
 2. **Merged under the repository's merge policy.** The merge policy (review
    passes by risk tier, who may merge) is set in
-   [`delivery.md`](delivery.md#review) and the repository's `AGENTS.md`. This
+   [`delivery.md`](delivery.md#merge-policy) and the repository's `AGENTS.md`. This
    page does not decide who merges.
 3. **Required checks are green** on the PR, including the acceptance-criteria
    check if the repository has one.
@@ -82,7 +82,9 @@ The "Done when" boxes on an issue are its acceptance criteria.
 A repository should enforce rules 2 and 4 in CI: a check that fails a PR whose
 body closes an issue but leaves a "Done when" box unticked, or ticked without
 proof. PRs that only reference an issue are exempt. A rule that lives only in
-people's memory gets skipped.
+people's memory gets skipped. Example: foodbear-engine enforces this with
+`scripts/check_done_when.py`, which reads the linked issue through the GitHub
+API (its ADR 0021).
 
 Example PR body:
 
@@ -146,9 +148,8 @@ not as a gate.
 
 ## What closing does not do
 
-- **It does not set the merge policy.** Today's rules stand:
-  [`delivery.md`](delivery.md#review) says a human who is not the author
-  merges, and AI review is an input, not approval. An adopting repository's
+- **It does not set the merge policy.** The merge policy in
+  [`delivery.md`](delivery.md#merge-policy) stands. An adopting repository's
   own merge rule (for example "the owner merges") also stands. Allowing a
   defined low-risk class to merge without human review is a merge-policy
   decision for each repository's owner, recorded in that repository.
