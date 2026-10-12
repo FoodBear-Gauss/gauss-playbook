@@ -12,6 +12,7 @@
 | **Go** | The owner's permission for one live push, or for one agreed batch of like pushes on the same store in one sitting. A go expires. |
 | **House rules** | The owner's rules for a repository. They override this playbook for local facts. |
 | **Live write** | Any change to a delivery platform, POS, shared sheet, database or customer-visible menu. |
+| **Merge policy** | Who may merge and on what evidence. Set in [`delivery.md`](delivery.md#merge-policy) and the repository's `AGENTS.md`. Separate from done. |
 | **Re-read** | Reading the platform back after a write and comparing it with the plan. |
 | **Restore** | The step that puts a test store back to how it was before a live test. |
 | **Risk tier** | R0 to R3; see [`risk-and-approval.md`](risk-and-approval.md). |

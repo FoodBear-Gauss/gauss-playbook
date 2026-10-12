@@ -82,6 +82,9 @@ guard: a hook that stops and asks before a matching live-write command runs.
 - Never invent output, numbers, evidence or citations.
 - An issue is done only as [`definition-of-done.md`](definition-of-done.md) says:
   its PR merges into the default branch and proves every "Done when" box.
+- Put a closing keyword only on an issue the owner means this PR to close. Use
+  `Refs #N` for partial work and `Part of #N` in a PR into an integration branch
+  ([`definition-of-done.md`](definition-of-done.md#closing)).
 
 ## Handoff
 
@@ -94,7 +97,9 @@ results, any external writes made, and what is still open.
 - write to a live platform without a go, or outside the test stores;
 - hide a failure or claim work that was not done;
 - bypass review, CI guards or approval controls;
-- merge, deploy, publish or message anyone outside your explicit authority.
+- merge, deploy, publish or message anyone outside your explicit authority;
+- work around a refused permission, hook prompt or CI guard. Stop and ask the
+  person.
 
 ## Learning loop
 

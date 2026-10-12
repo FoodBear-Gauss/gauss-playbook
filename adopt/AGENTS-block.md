@@ -16,7 +16,7 @@ more specific.
 - **Test stores:** <names or link; live tests happen only here>
 - **Project documents:** `docs/`
 - **Review and merge:** <who reviews, who merges>
-- **Definition of Done:** the playbook's `definition-of-done.md`, plus <link to local additions, usually an ADR>
+- **Definition of Done:** the playbook's `definition-of-done.md`, plus <link to local additions, usually an ADR>; enforced by <CI check that fails a PR with an unproven "Done when" box, or "none yet">
 - **Release and rollback:** <link to runbook>
 - **Stop all runs:** <command or procedure>
 
@@ -38,3 +38,5 @@ Never claim a check passed if it did not run.
   network call, anything touching credentials.
 - **Never:** write to a store that is not a test store, arm your own push,
   commit secrets, weaken a test or CI guard, merge your own PR.
+- **If refused:** when a permission check, hook or CI guard refuses an action,
+  stop and ask. Do not route around it.
