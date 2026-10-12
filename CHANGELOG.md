@@ -4,6 +4,19 @@ Notable changes to the playbook. Newest first.
 
 ## Unreleased
 
+- `definition-of-done.md`, the org-wide Definition of Done: the shared
+  checklist, acceptance-criteria rules (every "Done when" box provable in a PR;
+  person-only steps become a gate or a follow-up issue with an owner), closing
+  on merge to the default branch through a closing keyword, integration
+  branches, reopening with evidence, status words and a short Definition of
+  Ready. Cites the Scrum Guide, GitHub Docs, DORA and others.
+- `delivery.md`: the review rules are named as the merge policy, separate from
+  done; a new "Done and closing" section; PRs list the issues they complete and
+  the proof for each "Done when" box.
+- `templates/plan.md`: "Done when" and "Gates" sections.
+- `glossary.md`: acceptance criteria, Definition of Done, done.
+- `AGENTS.md`, `README.md` and `adopt/AGENTS-block.md` point to the new page.
+  `scripts/check.py` requires it.
 - Claude Code enforcement kit in `adopt/claude/`: a PreToolUse hook that asks
   before a Bash command matching a live-write pattern runs (it never approves),
   an empty pattern file with generic examples, and a settings template that

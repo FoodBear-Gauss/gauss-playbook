@@ -43,6 +43,24 @@ their own homework later.>
 <command>
 ```
 
+## Done when
+
+<1 to 7 boxes, copied from the issue. Each one is provable inside the PR: a test,
+a command with its expected output, or a file and line to re-read. See
+[`../definition-of-done.md`](../definition-of-done.md#acceptance-criteria).>
+
+- [ ] <observable result>: proved by <test, command, or file:line>
+
+## Gates
+
+<Steps only a person can do, such as a second engineer's re-run or the owner's
+sign-off. They are not "Done when" boxes. Say whether each one must happen
+before merge (part of the merge policy) or after it (a follow-up issue).>
+
+| Gate | Owner | Before or after merge | Follow-up issue |
+|---|---|---|---|
+| | <named person> | | <#N, for after-merge gates> |
+
 ## Out of scope
 
 <What this plan deliberately does not do, so that scope creep is visible when it

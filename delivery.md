@@ -21,6 +21,8 @@ Every material change goes through a branch and a pull request. The PR states:
 - risk tier;
 - key decisions, with links to ADRs;
 - checks run, with results (passed, failed, skipped, not run);
+- the issues it completes (`Closes #N`) or only touches (`Refs #N`);
+- each "Done when" box from those issues, ticked, with its proof;
 - evidence: re-read output, coverage-sheet rows, screenshots that support
   (not replace) reproducible checks;
 - rollback;
@@ -49,10 +51,26 @@ Every finding has a severity:
 | Minor | Author's call |
 | Note | Never blocks |
 
+### Merge policy
+
 AI review is an input, not approval. A human who is not the author merges. The
 author's self-review is a record of what they checked, not a pass.
 
+The review passes above and this rule are the **merge policy**: they decide who
+may merge and on what evidence. They do not define when an issue is done. An
+adopting repository may set a stricter merge rule in its `AGENTS.md`. Letting a
+defined low-risk class merge without human review is that repository's owner's
+decision, recorded there; until then this rule stands.
+
 Use [`templates/review.md`](templates/review.md).
+
+## Done and closing
+
+An issue is done when the PR that completes it merges into the default branch
+and proves every "Done when" box on the issue. The PR body says `Closes #N`, so
+GitHub closes the issue on merge, whoever merged it under the merge policy.
+Anyone may reopen it with evidence. The full rule, the shared checklist and the
+acceptance-criteria rules are in [`definition-of-done.md`](definition-of-done.md).
 
 ## Release
 

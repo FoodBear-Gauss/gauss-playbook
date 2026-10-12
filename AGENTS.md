@@ -80,6 +80,8 @@ guard: a hook that stops and asks before a matching live-write command runs.
 - Report each check as **passed, failed, skipped or not run**, with the command.
 - Never weaken, skip or rewrite a failing test to get green.
 - Never invent output, numbers, evidence or citations.
+- An issue is done only as [`definition-of-done.md`](definition-of-done.md) says:
+  its PR merges into the default branch and proves every "Done when" box.
 
 ## Handoff
 

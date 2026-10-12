@@ -2,6 +2,25 @@
 
 Current state, open work and evidence. Newest first.
 
+## 2026-10-12: Definition of Done
+
+**State.** `definition-of-done.md` sets the org-wide rule decided by the
+program lead on 12 Oct 2026: an issue is done, and closes, when its PR merges
+into the default branch and proves every "Done when" box, with or without a
+human review. `delivery.md` keeps its review and merge rules and now calls them
+the merge policy, separate from done. `scripts/check.py` and the unit tests
+pass locally.
+
+**Open.**
+
+- The merge policy is unchanged: a human who is not the author merges. Whether
+  a defined low-risk class may merge without human review is a decision for
+  each adopting repository's owner. For the engine (R3), that is Damien.
+- No CI check yet enforces the "Done when" rule. The engine is to add one with
+  its ADR 0021; the playbook only says a repository should.
+- Some research sources were seen only in search summaries (the Scrum.org
+  articles). Their wording should be re-checked before anyone quotes them.
+
 ## 2026-10-08: Claude Code enforcement kit
 
 **State.** `adopt/claude/` adds a live-write guard hook, a pattern file and a

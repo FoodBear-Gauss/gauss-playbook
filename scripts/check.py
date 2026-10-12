@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 REQUIRED = [
     "README.md", "AGENTS.md", "CLAUDE.md", "TESTING.md", "CHANGELOG.md", "DEVLOG.md",
     "principles.md", "lifecycle.md", "risk-and-approval.md", "delivery.md", "glossary.md",
+    "definition-of-done.md",
     "adopt/README.md", "adopt/AGENTS-block.md", "templates/README.md", "templates/progress.md",
     "adopt/claude/README.md", "adopt/claude/settings.json",
     "adopt/claude/live-write-patterns.example.json", "adopt/claude/hooks/live_write_guard.py",
