@@ -10,7 +10,7 @@ added to a repository without its owner agreeing.
    documents live. Write the answers into the repository's `AGENTS.md`.
 2. **Add the agent block.** Copy [`AGENTS-block.md`](AGENTS-block.md) into the
    top of the repository's `AGENTS.md` (create it if missing) and fill in the
-   placeholders. Add a `CLAUDE.md` whose first line is `@AGENTS.md`, so Claude
+   placeholders. Add a `CLAUDE.md` that starts with the line `@AGENTS.md` (under its title), so Claude
    Code imports the contract. Below it, put only Claude-Code-specific notes
    (hooks, settings). See this repository's [`CLAUDE.md`](../CLAUDE.md).
 3. **Link the house rules.** If the owner has house rules, link them from
